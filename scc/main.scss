@@ -1,0 +1,47 @@
+body {
+    padding: 0px;
+    margin: 0px;
+}
+
+#main-container {
+    background-color: #c6a383;
+    width: 800px;
+    height: 800px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.block1 {
+    display: flex;
+    div {
+        width: 100px;
+        height: 100px;
+        background-color: #b95136;
+        @for $i from 1 to 4 {
+            &:nth-of-type(#{$i}) {
+                position: absolute;
+                left: 200px * $i;
+            }
+        }
+    }
+}
+
+.block2 {
+    display: flex;
+    div {
+        width: 100px;
+        height: 100px;
+        background-color: #b95136;
+        @for $i from 1 to 4 {
+            &:nth-of-type(#{$i}) {
+                position: absolute;
+                left: 100px + (200px * $i);
+            }
+        }
+
+        &:nth-of-type(4) {
+            margin-left: 100px;
+        }
+    }
+}
+
